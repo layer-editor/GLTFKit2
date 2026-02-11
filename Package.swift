@@ -1,20 +1,26 @@
-//swift-tools-version: 5.5
+// swift-tools-version: 5.9
 
 import PackageDescription
 
 let package = Package(
     name: "GLTFKit2",
     platforms: [
-        .macOS("11.0"), .macCatalyst("14.0"), .iOS("12.1"), .tvOS("12.1")
-        // Note: visionOS("1.0") is also supported, but we can't require Swift tools version 5.9 yet.
+        .iOS(.v16),
+        .macOS(.v13),
+        .tvOS(.v16),
+        .visionOS(.v1)
     ],
     products: [
-        .library(name: "GLTFKit2",
-                 targets: [ "GLTFKit2" ])
+        .library(
+            name: "GLTFKit2",
+            targets: ["GLTFKit2"]
+        )
     ],
     targets: [
-        .binaryTarget(name: "GLTFKit2",
-                      url: "https://github.com/warrenm/GLTFKit2/releases/download/0.5.15/GLTFKit2.xcframework.zip",
-                      checksum:"9d0c338282acce4986494aa02a5f1495278f56c60d43f31453fefea6875b4928")
+        .binaryTarget(
+            name: "GLTFKit2",
+            url: "https://github.com/warrenm/GLTFKit2/releases/download/0.5.15/GLTFKit2.xcframework.zip",
+            checksum: "9d0c338282acce4986494aa02a5f1495278f56c60d43f31453fefea6875b4928"
+        )
     ]
 )
